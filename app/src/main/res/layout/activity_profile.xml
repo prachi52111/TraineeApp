@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_back"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/txt_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_user_name"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edt_uer_name"
+        android:textSize="15dp"
+        android:layout_toRightOf="@id/txt_user_name"
+        android:layout_alignBaseline="@+id/txt_user_name" />
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/txt_user_name"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_hint"
+        android:layout_alignBaseline="@+id/txt_email"
+        android:layout_toRightOf="@id/txt_email"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txt_old_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_old_pass"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/txt_email"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edt_old_pass"
+        android:layout_alignBaseline="@id/txt_old_pass"
+        android:layout_toRightOf="@id/txt_old_pass"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txt_new_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_new_pass"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/txt_old_pass"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edt_new_pass"
+        android:layout_alignBaseline="@id/txt_new_pass"
+        android:layout_toRightOf="@id/txt_new_pass"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_update"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/txt_new_pass"
+        android:layout_marginLeft="100dp"
+        android:textSize="15dp" />
+
+</RelativeLayout>

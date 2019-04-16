@@ -1,0 +1,85 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44FF9E"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textColor="#0E0202"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_email"
+        android:layout_alignBaseline="@id/txt_email"
+        android:layout_toRightOf="@id/txt_email"
+        android:hint="@string/email_hint"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/txt_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_email"
+        android:text="@string/password"
+        android:textColor="#0e0202"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_pass"
+        android:layout_alignBaseline="@id/txt_pass"
+        android:layout_toRightOf="@id/txt_pass"
+        android:hint="@string/pass_hint"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/txt_dont_have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_pass"
+        android:layout_marginLeft="40dp"
+        android:text="@string/dont_have_acc"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/txt_dont_have"
+        android:text="@string/txt_sign_up"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_sign_up"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/txt_forgot_pass"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_forgot"
+        android:layout_marginLeft="150dp"
+        android:text="@string/btn_sign_in"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</RelativeLayout>
