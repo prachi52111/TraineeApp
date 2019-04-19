@@ -29,12 +29,11 @@ public class SignInActivity extends AppCompatActivity {
         txt_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
-
             }
         });
+
 
         Button btn_sign_in = findViewById(R.id.btn_sign_in);
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
@@ -48,13 +47,22 @@ public class SignInActivity extends AppCompatActivity {
                 } else if (!isValidPassword(Password)) {
                     password.setError("Invalid Password");
                 } else {
-                    isUserLoggedIn(Email,true);
+                    isUserLoggedIn(Email, true);
                     Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
                     startActivity(intent);
                 }
             }
         });
 
+
+        findViewById(R.id.edt_email).setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!isValidEmail(email.getText().toString())) {
+                    email.setError("Invalid Email");
+                }
+            }
+        });
 
         TextView txt_forgot_pass = findViewById(R.id.txt_forgot);
         txt_forgot_pass.setOnClickListener(new View.OnClickListener() {
