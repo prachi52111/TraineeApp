@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">prachi\'s Demo</string>
+    <string name="app_name">TraineeApp</string>
     <string name="splash_text">Welcome To The Android App</string>
     <string name="email">Email</string>
     <string name="email_hint">Enter Your Email</string>
@@ -38,4 +38,5 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="nav_profile">Profile</string>
+    <string name="btn_logout">LOGOUT</string>
 </resources>
