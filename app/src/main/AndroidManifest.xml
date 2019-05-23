@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashBoard"></activity>
+        <activity android:name=".activities.DashBoard"></activity>
         <activity
-            android:name=".NavigationDrawer"
+            android:name=".activities.NavigationDrawer"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgotPasswordActiivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.ForgotPasswordActiivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.SignInActivity" />
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
