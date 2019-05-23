@@ -1,4 +1,4 @@
-package com.example.prachisdemo;
+package com.example.prachisdemo.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.prachisdemo.R;
+import com.example.prachisdemo.database.DatabaseHelper;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,6 +21,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private EditText email;
     private EditText password;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,10 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
         email = findViewById(R.id.edt_email);
         password = findViewById(R.id.edt_pass);
+        email.setText("prachi.gabani@gmail.com");
+        password.setText("123123");
+
+        databaseHelper = new DatabaseHelper(this);
 
         TextView txt_sign_up = findViewById(R.id.txt_sign_up);
         txt_sign_up.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +56,13 @@ public class SignInActivity extends AppCompatActivity {
                 } else if (!isValidPassword(Password)) {
                     password.setError("Invalid Password");
                 } else {
-                    isUserLoggedIn(Email, true);
-                    Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
-                    startActivity(intent);
+                    if (databaseHelper.checkUser(Email,Password)) {
+                        isUserLoggedIn(Email, true);
+                        Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(SignInActivity.this, "Invalid email or Password", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

@@ -5,88 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_back"
+    android:layout_gravity="center">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center">
 
     <TextView
-        android:id="@+id/txt_user_name"
+        android:id="@+id/txt_fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_user_name"
-        android:textSize="15dp"
+        android:text="@string/txt_fname"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edt_username"
+        android:id="@+id/edt_fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/edt_uer_name"
-        android:textSize="15dp"
-        android:layout_toRightOf="@id/txt_user_name"
-        android:layout_alignBaseline="@+id/txt_user_name" />
+        android:layout_below="@id/txt_fname"
+        android:hint="@string/edt_fname"
+        android:maxLines="1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_fname"
+        android:layout_marginTop="5dp"
+        android:text="@string/txt_lname"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_lname"
+        android:hint="@string/edt_lname"
+        android:maxLines="1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_lname"
+        android:layout_marginTop="1dp"
+        android:text="@string/text_gender"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+        android:id="@+id/rdg_gender"
+        android:layout_width="match_parent"
+        android:layout_below="@id/txt_gender"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rdb_male"
+            android:checked="true"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/rdb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rdb_female"
+            android:textSize="20dp" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txt_gender"
+        android:layout_marginTop="35dp"
         android:text="@string/email"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/txt_user_name"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/email_hint"
-        android:layout_alignBaseline="@+id/txt_email"
-        android:layout_toRightOf="@id/txt_email"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/txt_old_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_old_pass"
-        android:layout_marginTop="15dp"
         android:layout_below="@id/txt_email"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:hint="@string/email_hint"
+        android:editable="false"
+        android:maxLines="1"
+        android:textSize="20dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/edt_old_pass"
-        android:layout_alignBaseline="@id/txt_old_pass"
-        android:layout_toRightOf="@id/txt_old_pass"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/txt_new_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_new_pass"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/txt_old_pass"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/edt_new_pass"
-        android:layout_alignBaseline="@id/txt_new_pass"
-        android:layout_toRightOf="@id/txt_new_pass"
-        android:textSize="15dp" />
 
     <Button
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_update"
+        android:layout_below="@id/edt_email"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/txt_new_pass"
-        android:layout_marginLeft="100dp"
-        android:textSize="15dp" />
+        android:text="@string/btn_update"
+        android:textSize="17dp" />
 
+</RelativeLayout>
 </RelativeLayout>
