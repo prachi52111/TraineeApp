@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 if (isuserlogin()) {
-                    startActivity(new Intent(SplashActivity.this, DashBoard.class));
+                    startActivity(new Intent(SplashActivity.this, NavigationDrawer.class));
                     finish();
                 } else {
                     startActivity(new Intent(SplashActivity.this, SignInActivity.class));

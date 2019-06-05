@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.prachisdemo.R;
 import com.example.prachisdemo.database.DatabaseHelper;
@@ -20,7 +23,9 @@ import java.util.regex.Pattern;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText email, firstname, lastname, gender;
+    private RadioGroup radioGroup;
     DatabaseHelper databaseHelper;
+    RadioButton  rdbMale,rdbFemale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,10 @@ public class ProfileActivity extends AppCompatActivity {
         firstname = findViewById(R.id.edt_fname);
         lastname = findViewById(R.id.edt_lname);
         email = findViewById(R.id.edt_email);
+        radioGroup = findViewById(R.id.rdg_gender);
+        rdbMale= findViewById(R.id.rdb_male);
+        rdbFemale= findViewById(R.id.rdb_male);
+
         databaseHelper = new DatabaseHelper(this);
 
         setDefaultProfile();
@@ -41,14 +50,25 @@ public class ProfileActivity extends AppCompatActivity {
                 final String Fname = firstname.getText().toString();
                 final String Lname = lastname.getText().toString();
                 final String Email = email.getText().toString();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = findViewById(selectedId);
+                final String gender = radioButton.getText().toString();
 
                 if (!isValidFirstname(Fname)) {
                     firstname.setError("Invalid Firstname");
                 } else if (!isValidLastname(Lname)) {
                     lastname.setError("Invalid Lastname");
                 } else {
-                    Intent intent = new Intent(ProfileActivity.this, DashBoard.class);
+                    User user = new User();
+                    user.setFirstName(Fname);
+                    user.setLastName(Lname);
+                    user.setEmail(Email);
+                    user.setGender(gender);
+                    databaseHelper.updateUser(user);
+
+                    Intent intent = new Intent(ProfileActivity.this, NavigationDrawer.class);
                     startActivity(intent);
+                    Toast.makeText(ProfileActivity.this, "Successfully Update", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -63,8 +83,10 @@ public class ProfileActivity extends AppCompatActivity {
         User profileList = databaseHelper.getLoggedInUserDetails(mEmail);
         firstname.setText(profileList.getFirstName());
         lastname.setText(profileList.getLastName());
-       // gender.setText(profileList.getGender());
-//        email.setText(profileList.getEmail());
+        if(profileList.getGender().equalsIgnoreCase("male"))
+            rdbMale.setChecked(true);
+        else
+            rdbFemale.setChecked(true);
     }
 
 
