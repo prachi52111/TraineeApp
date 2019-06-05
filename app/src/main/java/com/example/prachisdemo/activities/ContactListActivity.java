@@ -10,10 +10,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
-
 
 import com.example.prachisdemo.R;
 import com.example.prachisdemo.adapter.ContactListAdapter;
@@ -40,10 +38,8 @@ public class ContactListActivity extends AppCompatActivity {
      * Initializing all views.
      */
     private void init() {
-
         listview = (ListView) findViewById(R.id.list_contact);
         checkPermission();
-
     }
 
     /**
@@ -68,8 +64,10 @@ public class ContactListActivity extends AppCompatActivity {
 
     }
 
-    /** \
+    /**
+     * \
      * Request for permission
+     *
      * @param requestCode
      * @param permissions
      * @param grantResults
@@ -88,8 +86,10 @@ public class ContactListActivity extends AppCompatActivity {
         }
     }
 
-    /** \
+    /**
+     * \
      * Request for contacts permission
+     *
      * @param grantResults
      */
     private void goWithContacsPermission(int[] grantResults) {
@@ -121,8 +121,10 @@ public class ContactListActivity extends AppCompatActivity {
         phones.close();
     }
 
-    /** \
+    /**
+     * \
      * This method functions when clicked on toolbar items
+     *
      * @param menuItem
      * @return
      */
@@ -135,4 +137,10 @@ public class ContactListActivity extends AppCompatActivity {
         }
         return (super.onOptionsItemSelected(menuItem));
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 }
