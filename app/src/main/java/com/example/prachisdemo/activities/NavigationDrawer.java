@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.prachisdemo.R;
@@ -115,7 +114,9 @@ public class NavigationDrawer extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(NavigationDrawer.this, ContactListActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_music) {
+            Intent intent = new Intent(NavigationDrawer.this, MyServicesActivity.class);
+            startActivity(intent);
 
         }
 

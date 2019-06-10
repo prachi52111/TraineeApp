@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.BatteryIndicatorActivity"></activity>
+        <activity android:name=".activities.MyServicesActivity"></activity>
+
+        <service
+            android:name=".activities.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activities.BatteryIndicatorActivity" />
         <activity android:name=".activities.UserListActivity" />
         <activity
             android:name=".activities.NavigationDrawer"
@@ -22,6 +29,7 @@
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.SignInActivity" />
         <activity android:name=".activities.ContactListActivity" />
+
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,5 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
+
 </manifest>
