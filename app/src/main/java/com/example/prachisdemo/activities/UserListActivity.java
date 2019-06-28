@@ -16,9 +16,7 @@ import com.example.prachisdemo.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lalit on 10/10/2016.
- */
+
 
 public class UserListActivity extends AppCompatActivity {
 

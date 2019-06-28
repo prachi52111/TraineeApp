@@ -1,8 +1,11 @@
 package com.example.prachisdemo.models;
 
+import android.graphics.Bitmap;
+
 public class User {
 
     String firstName, lastName, email, password, gender;
+    private Bitmap photo;
 
     public void setEmail(String email) {
         this.email = email;
@@ -43,6 +46,15 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+    public Bitmap getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Bitmap photo) {
+        this.photo = photo;
+    }
+
 
 
     public String getName() {

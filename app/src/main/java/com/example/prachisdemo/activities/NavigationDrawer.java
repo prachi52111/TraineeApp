@@ -50,7 +50,6 @@ public class NavigationDrawer extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
     }
 
     @Override
@@ -108,10 +107,10 @@ public class NavigationDrawer extends AppCompatActivity
             finish();
             toastEmail();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_battery_indicator) {
             Intent intent = new Intent(NavigationDrawer.this, BatteryIndicatorActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_contect) {
             Intent intent = new Intent(NavigationDrawer.this, ContactListActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_music) {

@@ -48,8 +48,8 @@ public class SignInActivity extends AppCompatActivity {
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String Email = email.getText().toString();
-                final String Password = password.getText().toString();
+                 String Email = email.getText().toString();
+                 String Password = password.getText().toString();
 
                 if (!isValidEmail(Email)) {
                     email.setError("Invalid Email");

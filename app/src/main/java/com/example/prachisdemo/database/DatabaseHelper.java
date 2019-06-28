@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.prachisdemo.activities.Utility;
 import com.example.prachisdemo.models.User;
 
 import java.util.ArrayList;
@@ -29,6 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_GENDER = "user_gender";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_USER_PHOTO = "user_photo";
+
 
     // create table sql query
     private String CREATE_USER_TABLE =
@@ -37,8 +40,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + COLUMN_USER_LAST_NAME + " TEXT,"
                     + COLUMN_USER_GENDER + " TEXT,"
                     + COLUMN_USER_EMAIL + " TEXT PRIMARY KEY,"
-                    + COLUMN_USER_PASSWORD + " TEXT"
-                    + ")";
+                    + COLUMN_USER_PASSWORD + " TEXT,"
+                    + COLUMN_USER_PHOTO + " blob"
+                    +")";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -81,6 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(COLUMN_USER_GENDER, user.getGender());
             values.put(COLUMN_USER_EMAIL, user.getEmail());
             values.put(COLUMN_USER_PASSWORD, user.getPassword());
+            values.put(COLUMN_USER_PHOTO, Utility.getBytes(user.getPhoto()));
 
             // Inserting Row
             db.insert(TABLE_USER, null, values);
@@ -192,6 +197,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_FIRST_NAME, user.getFirstName());
         values.put(COLUMN_USER_LAST_NAME, user.getLastName());
         values.put(COLUMN_USER_GENDER, user.getGender());
+        values.put(COLUMN_USER_PHOTO, Utility.getBytes(user.getPhoto()));
         // updating row
         db.update(TABLE_USER, values, COLUMN_USER_EMAIL + " = ?",
                 new String[]{user.getEmail()});
@@ -243,7 +249,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 COLUMN_USER_FIRST_NAME,
                 COLUMN_USER_LAST_NAME,
-                COLUMN_USER_GENDER
+                COLUMN_USER_GENDER,
+                COLUMN_USER_PHOTO
         };
         // sorting orders
         String sortOrder =
@@ -278,6 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.setFirstName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FIRST_NAME)));
                 user.setLastName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_LAST_NAME)));
                 user.setGender(cursor.getString(cursor.getColumnIndex(COLUMN_USER_GENDER)));
+                user.setPhoto(Utility.getPhoto(cursor.getBlob(cursor.getColumnIndex(COLUMN_USER_PHOTO))));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -286,7 +294,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // return user list
         return user;
     }
-
 
     /**
      * This method is to delete user record

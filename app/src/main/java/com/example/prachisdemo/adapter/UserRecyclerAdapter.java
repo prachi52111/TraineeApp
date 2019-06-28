@@ -17,9 +17,6 @@ import com.example.prachisdemo.models.User;
 
 import java.util.List;
 
-/**
- * Created by lalit on 10/10/2016.
- */
 
 public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.UserViewHolder> {
 

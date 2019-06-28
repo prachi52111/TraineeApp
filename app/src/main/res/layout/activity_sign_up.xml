@@ -3,11 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CFC13E"
         android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:onClick="onClickSelectPhoto"
+            android:src="@drawable/ic_tag_faces_black_24dp" />
+
 
         <TextView
             android:id="@+id/txt_fname"
@@ -15,6 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/txt_fname"
             android:textSize="20dp"
+            android:layout_below="@id/iv_photo"
             android:textStyle="bold" />
 
         <EditText
@@ -59,16 +73,16 @@
         <RadioGroup
             android:id="@+id/rdg_gender"
             android:layout_width="match_parent"
-            android:layout_below="@id/txt_gender"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txt_gender"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/rdb_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rdb_male"
                 android:checked="true"
+                android:text="@string/rdb_male"
                 android:textSize="20dp" />
 
             <RadioButton
