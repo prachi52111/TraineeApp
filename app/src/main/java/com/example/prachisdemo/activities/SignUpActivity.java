@@ -12,10 +12,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,12 +28,16 @@ import com.example.prachisdemo.R;
 import com.example.prachisdemo.database.DatabaseHelper;
 import com.example.prachisdemo.models.User;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class SignUpActivity extends AppCompatActivity {
 

@@ -3,31 +3,33 @@ package com.example.prachisdemo.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.prachisdemo.R;
+import com.google.android.gms.maps.model.Dash;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
-public class NavigationDrawer extends AppCompatActivity
+import android.preference.PreferenceManager;
+import android.view.View;
+
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation_drawer);
-
-
+        setContentView(R.layout.activity_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,8 +50,6 @@ public class NavigationDrawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -65,7 +65,7 @@ public class NavigationDrawer extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_drawer, menu);
+        getMenuInflater().inflate(R.menu.dashboard, menu);
         return true;
     }
 
@@ -87,49 +87,41 @@ public class NavigationDrawer extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-
         if (id == R.id.txt_nav_profile) {
 
-            Intent intent = new Intent(NavigationDrawer.this, ProfileActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, ProfileActivity.class);
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_user) {
 
-            Intent intent = new Intent(NavigationDrawer.this, UserListActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, UserListActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
             clearSharedPref();
-            Intent intent = new Intent(NavigationDrawer.this, SignInActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, SignInActivity.class);
             startActivity(intent);
             finish();
-            toastEmail();
-
         } else if (id == R.id.nav_battery_indicator) {
-            Intent intent = new Intent(NavigationDrawer.this, BatteryIndicatorActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, BatteryIndicatorActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_contect) {
-            Intent intent = new Intent(NavigationDrawer.this, ContactListActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, ContactListActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_music) {
-            Intent intent = new Intent(NavigationDrawer.this, MyServicesActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, MyServicesActivity.class);
             startActivity(intent);
-
+        }else if (id ==R.id.nav_map){
+            Intent intent = new Intent(DashboardActivity.this,MapsActivity.class);
+            startActivity(intent);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void toastEmail() {
-        SharedPreferences sharedPreferences = PreferenceManager
-                .getDefaultSharedPreferences(this);
-        String email = sharedPreferences.getString("email", "");
-        Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
-    }
 
     private void clearSharedPref() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -137,4 +129,5 @@ public class NavigationDrawer extends AppCompatActivity
         editor.clear();
         editor.commit();
     }
+
 }

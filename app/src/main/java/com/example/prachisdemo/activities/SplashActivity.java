@@ -4,10 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.prachisdemo.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 if (isuserlogin()) {
-                    startActivity(new Intent(SplashActivity.this, NavigationDrawer.class));
+                    startActivity(new Intent(SplashActivity.this, DashboardActivity.class));
                     finish();
                 } else {
                     startActivity(new Intent(SplashActivity.this, SignInActivity.class));

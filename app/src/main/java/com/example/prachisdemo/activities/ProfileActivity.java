@@ -13,10 +13,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +22,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -40,6 +36,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText email, firstname, lastname, gender;
@@ -111,7 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
                     databaseHelper.updateUser(user);
 
 
-                    Intent intent = new Intent(ProfileActivity.this, NavigationDrawer.class);
+                    Intent intent = new Intent(ProfileActivity.this, DashboardActivity.class);
                     startActivity(intent);
                     Toast.makeText(ProfileActivity.this, "Successfully Update", Toast.LENGTH_SHORT).show();
                 }

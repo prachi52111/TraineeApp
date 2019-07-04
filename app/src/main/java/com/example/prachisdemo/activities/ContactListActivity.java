@@ -6,10 +6,6 @@ import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ListView;
 
@@ -17,6 +13,11 @@ import com.example.prachisdemo.R;
 import com.example.prachisdemo.adapter.ContactListAdapter;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class ContactListActivity extends AppCompatActivity {
     private ContactListAdapter adapter;

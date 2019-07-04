@@ -3,8 +3,6 @@ package com.example.prachisdemo.adapter;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +14,9 @@ import com.example.prachisdemo.database.DatabaseHelper;
 import com.example.prachisdemo.models.User;
 
 import java.util.List;
+
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.UserViewHolder> {

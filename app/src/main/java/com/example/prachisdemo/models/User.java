@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 public class User {
 
     String firstName, lastName, email, password, gender;
+
     private Bitmap photo;
 
     public void setEmail(String email) {

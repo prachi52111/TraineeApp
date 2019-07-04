@@ -1,9 +1,10 @@
 package com.example.prachisdemo.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.prachisdemo.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ForgotPasswordActiivity extends AppCompatActivity {
 

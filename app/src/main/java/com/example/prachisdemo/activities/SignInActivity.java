@@ -3,7 +3,6 @@ package com.example.prachisdemo.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +15,8 @@ import com.example.prachisdemo.database.DatabaseHelper;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -58,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
                 } else {
                     if (databaseHelper.checkUser(Email,Password)) {
                         isUserLoggedIn(Email, true);
-                        Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
+                        Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(SignInActivity.this, "Invalid email or Password", Toast.LENGTH_SHORT).show();
