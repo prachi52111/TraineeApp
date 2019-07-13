@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44FF"
+    android:graviy="center">
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="GET"
+        android:textSize="20dp"
+        android:layout_marginTop="250dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_get"
+        android:layout_marginLeft="150dp"
+        android:text="POST"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_put"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_post"
+        android:layout_marginLeft="150dp"
+        android:text="PUT"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_put"
+        android:layout_marginLeft="150dp"
+        android:text="DELETE"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</RelativeLayout>
