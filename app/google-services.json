@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "659580059784",
+    "firebase_url": "https://traineeapp-e9eb5.firebaseio.com",
+    "project_id": "traineeapp-e9eb5",
+    "storage_bucket": "traineeapp-e9eb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659580059784:android:371f69371f6cf01b",
+        "android_client_info": {
+          "package_name": "com.example.prachisdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659580059784-dtj3cv1vqmakstt9pjg4cv505jof8ju7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvh7fexhBG2ldP0Gcg-Zr-IQ2FV8_s_1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659580059784-dtj3cv1vqmakstt9pjg4cv505jof8ju7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

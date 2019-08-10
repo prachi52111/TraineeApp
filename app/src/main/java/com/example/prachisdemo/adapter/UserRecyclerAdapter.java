@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.prachisdemo.R;
 import com.example.prachisdemo.database.DatabaseHelper;
@@ -15,7 +16,6 @@ import com.example.prachisdemo.models.User;
 
 import java.util.List;
 
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -73,18 +73,18 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
      */
     public class UserViewHolder extends RecyclerView.ViewHolder {
 
-        public AppCompatTextView textViewFName;
-        public AppCompatTextView textViewLName;
-        public AppCompatTextView textViewGender;
-        public AppCompatTextView textViewEmail;
+        public TextView textViewFName;
+        public TextView textViewLName;
+        public TextView textViewGender;
+        public TextView textViewEmail;
         public ImageView imgDelete;
 
         public UserViewHolder(View view) {
             super(view);
             textViewFName = view.findViewById(R.id.textViewFirstName);
-            textViewLName = (AppCompatTextView) view.findViewById(R.id.textViewLastName);
-            textViewGender = (AppCompatTextView) view.findViewById(R.id.textViewGender);
-            textViewEmail = (AppCompatTextView) view.findViewById(R.id.textViewEmail);
+            textViewLName = (TextView) view.findViewById(R.id.textViewLastName);
+            textViewGender = (TextView) view.findViewById(R.id.textViewGender);
+            textViewEmail = (TextView) view.findViewById(R.id.textViewEmail);
             imgDelete = view.findViewById(R.id.img_delete);
         }
     }

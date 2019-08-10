@@ -1,9 +1,10 @@
 package com.example.prachisdemo.activities;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
-import com.example.prachisdemo.adapter.UserRecyclerAdapter;
 import com.example.prachisdemo.R;
+import com.example.prachisdemo.adapter.UserRecyclerAdapter;
 import com.example.prachisdemo.database.DatabaseHelper;
 import com.example.prachisdemo.models.User;
 
@@ -12,7 +13,6 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class UserListActivity extends AppCompatActivity {
 
     private AppCompatActivity activity = UserListActivity.this;
-    private AppCompatTextView textViewName;
+    private TextView textViewName;
     private RecyclerView recyclerViewUsers;
     private List<User> listUsers;
     private UserRecyclerAdapter usersRecyclerAdapter;
@@ -31,7 +31,6 @@ public class UserListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
-        getSupportActionBar().setTitle("");
         initViews();
         initObjects();
 
@@ -41,7 +40,7 @@ public class UserListActivity extends AppCompatActivity {
      * This method is to initialize views
      */
     private void initViews() {
-        textViewName = (AppCompatTextView) findViewById(R.id.textViewName);
+        textViewName = findViewById(R.id.textViewName);
         recyclerViewUsers = (RecyclerView) findViewById(R.id.recyclerViewUsers);
     }
 

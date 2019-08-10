@@ -22,7 +22,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.WebServicesActivity"></activity>
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".activities.WebServicesActivity" />
         <activity
             android:name=".activities.DashboardActivity"
             android:label="@string/title_activity_dashboard"
@@ -48,6 +49,14 @@
             android:name=".activities.MyService"
             android:enabled="true"
             android:exported="true" />
+
+        <service
+            android:name=".activities.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity android:name=".activities.BatteryIndicatorActivity" />
         <activity android:name=".activities.UserListActivity" />

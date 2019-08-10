@@ -5,9 +5,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.prachisdemo.DialogActivity;
 import com.example.prachisdemo.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -58,27 +61,6 @@ public class DashboardActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -96,7 +78,7 @@ public class DashboardActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
-            clearSharedPref();
+            clearSharedPref(DashboardActivity.this);
             Intent intent = new Intent(DashboardActivity.this, SignInActivity.class);
             startActivity(intent);
             finish();
@@ -109,20 +91,62 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.nav_music) {
             Intent intent = new Intent(DashboardActivity.this, MyServicesActivity.class);
             startActivity(intent);
-        }else if (id ==R.id.nav_map){
-            Intent intent = new Intent(DashboardActivity.this,MapsActivity.class);
+        } else if (id == R.id.nav_map) {
+            Intent intent = new Intent(DashboardActivity.this, MapsActivity.class);
             startActivity(intent);
-        }else if (id ==R.id.nav_webservices){
-            Intent intent = new Intent(DashboardActivity.this,WebServicesActivity.class);
+
+        } else if (id == R.id.nav_myfirebasemessagingservice) {
+            Intent intent = new Intent(DashboardActivity.this, MyFirebaseMessagingService.class);
             startActivity(intent);
+
+        } else if (id == R.id.nav_webservices) {
+            Intent intent = new Intent(DashboardActivity.this, WebServicesActivity.class);
+            startActivity(intent);
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dashboard, menu);
+        return true;
+    }
 
-    private void clearSharedPref() {
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            // action with ID action_settings was selected
+            case R.id.item_settings:
+                Toast.makeText(DashboardActivity.this, "Settings selected", Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            // action with ID action_logout was selected
+            case R.id.item_logout:
+                clearSharedPref(DashboardActivity.this);
+                Intent intent = new Intent(DashboardActivity.this, SignInActivity.class);
+                startActivity(intent);
+                Toast.makeText(DashboardActivity.this, "Logout selected", Toast.LENGTH_SHORT)
+                        .show();
+                finish();
+                break;
+            // action with ID action_alter_delete was selected
+            case R.id.item_delete:
+                Intent intent1 = new Intent(DashboardActivity.this, DialogActivity.class);
+                startActivity(intent1);
+                Toast.makeText(this, "Delete Selected", Toast.LENGTH_SHORT).show();
+            default:
+                break;
+        }
+
+        return true;
+    }
+
+
+    private void clearSharedPref(DashboardActivity dashboardActivity) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();

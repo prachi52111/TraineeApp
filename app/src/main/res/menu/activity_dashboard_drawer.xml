@@ -38,6 +38,11 @@
                 android:id="@+id/nav_webservices"
                 android:icon="@drawable/ic_add_alert_black_24dp"
                 android:title="WebServices" />
+
+            <item
+                android:id="@+id/nav_myfirebasemessagingservice"
+                android:icon="@drawable/ic_add_alert_black_24dp"
+                android:title="FirebaseService" />
         </menu>
     </item>
 </menu>

@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 public class User {
 
-    String firstName, lastName, email, password, gender;
+    String firstName, lastName, email, password, gender, name, job;
 
     private Bitmap photo;
 
@@ -22,6 +22,14 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
     }
 
     public void setPassword(String password) {
@@ -56,7 +64,9 @@ public class User {
         this.photo = photo;
     }
 
-
+    public String getJob() {
+        return null;
+    }
 
     public String getName() {
         return null;

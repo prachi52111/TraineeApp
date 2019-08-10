@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
     <TextView
         android:id="@+id/textfield"
         android:layout_marginTop="40dip"
@@ -19,4 +21,54 @@
         android:minHeight="100dip"
         android:max="100"
         style="?android:attr/progressBarStyleHorizontal"/>
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch"/>
+
+     <!--analytic code-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview"
+        app:srcCompat="@drawable/ic_tag_faces_black_24dp"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#0044ff"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        tools:text="@string/app_name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="horizontal">
+
+        <Button
+            style="?android:button"
+            android:text="@string/event_predefine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sendPredefineEvent"/>
+
+        <Button
+            style="?android:button"
+            android:text="@string/event_custom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sendCustomEvent"/>
+
+    </LinearLayout>
 </LinearLayout>

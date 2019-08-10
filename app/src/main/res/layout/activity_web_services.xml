@@ -2,17 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#44FF"
-    android:graviy="center">
+    android:background="#44FF">
 
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"/>
+
+    <EditText
+        android:id="@+id/edt_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="job"
+        android:layout_below="@+id/edt_name"/>
     <Button
         android:id="@+id/btn_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
+        android:layout_marginTop="250dp"
         android:text="GET"
         android:textSize="20dp"
-        android:layout_marginTop="250dp"
         android:textStyle="bold" />
 
     <Button
